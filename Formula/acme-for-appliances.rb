@@ -5,32 +5,32 @@
 class AcmeForAppliances < Formula
   desc "ACME Support for appliances that don't natively support it, like vCenter and Netscaler."
   homepage "https://github.com/beryju/acme-for-appliances"
-  version "0.9.0"
+  version "1.0.0"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v0.9.0/acme-for-appliances_0.9.0_darwin_amd64.tar.gz"
-      sha256 "ce59ab45be5a1a802fb65cbc153b8104465ea9d6c2518e445c39cd62c7646b8b"
+      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v1.0.0/acme-for-appliances_1.0.0_darwin_amd64.tar.gz"
+      sha256 "acb2939c17b855e88bc772d324b5b12deb1ad21a73f5813be1d9ce1383a07439"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v0.9.0/acme-for-appliances_0.9.0_darwin_arm64.tar.gz"
-      sha256 "b4a28524c41424d7859e808033fb30db863d02ef88e11b9484bc19b27f05afb7"
+      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v1.0.0/acme-for-appliances_1.0.0_darwin_arm64.tar.gz"
+      sha256 "a475e676bc0c68ee320b4bf835d92252d524b1e75419ed62d92c9cd9e16bbff1"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v0.9.0/acme-for-appliances_0.9.0_linux_amd64.tar.gz"
-      sha256 "c715ec0e440a411b8169639ea7591adf841531f7983844744b8fc3e6425eef89"
+      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v1.0.0/acme-for-appliances_1.0.0_linux_amd64.tar.gz"
+      sha256 "2a612c5ca487497478d47a2e8038a41b313e462d46fb9c34b629601f33d813c8"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v0.9.0/acme-for-appliances_0.9.0_linux_arm.tar.gz"
-      sha256 "9753edd0807e9b2adbc7ee700800585fea396ae920c1b56e950214fe3b84371d"
+      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v1.0.0/acme-for-appliances_1.0.0_linux_arm.tar.gz"
+      sha256 "f99e195667e36c5ba8ef4f8c8a257e2d982cf1742648a3c710db05938f2f981d"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v0.9.0/acme-for-appliances_0.9.0_linux_arm64.tar.gz"
-      sha256 "0275dc0005611e6438e47b852f70473778f67de81dee83ea3d3274587b7d7732"
+      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v1.0.0/acme-for-appliances_1.0.0_linux_arm64.tar.gz"
+      sha256 "3a346b2e079d34b67de6c34537a0ccaf1b03ed03da6cca1fa4e9eb21f0f4b23d"
     end
   end
 
