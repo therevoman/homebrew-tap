@@ -5,32 +5,32 @@
 class Korb < Formula
   desc "Move Kubernetes PVCs between Storage Classes and Namespaces"
   homepage "https://github.com/beryju/korb"
-  version "1.0.4"
+  version "1.1.0"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/BeryJu/korb/releases/download/v1.0.4/korb_1.0.4_darwin_amd64.tar.gz"
-      sha256 "6816b197801f1b4fcfb1375a7bf079c5d66d6646b9aaab298b39de47e4a6f67d"
+      url "https://github.com/BeryJu/korb/releases/download/v1.1.0/korb_1.1.0_darwin_amd64.tar.gz"
+      sha256 "17b1d8fca27108482a4d05ff86301d632eb7d65e635231a90dcdf3cdf7bfbe99"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/BeryJu/korb/releases/download/v1.0.4/korb_1.0.4_darwin_arm64.tar.gz"
-      sha256 "3274925fea9a297ddac0c1d7cfa642380cac287e6dfc34ec0e2129fb62c90710"
+      url "https://github.com/BeryJu/korb/releases/download/v1.1.0/korb_1.1.0_darwin_arm64.tar.gz"
+      sha256 "99d2d950db2479bea20900c996316e3e991d85ba3f17e8b6c7eac6e5f1a282a9"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/BeryJu/korb/releases/download/v1.0.4/korb_1.0.4_linux_amd64.tar.gz"
-      sha256 "72212a8901073edab1542cd9ee444968a375b137a4fa5dcdd1bb3a848b4ccfb0"
+      url "https://github.com/BeryJu/korb/releases/download/v1.1.0/korb_1.1.0_linux_amd64.tar.gz"
+      sha256 "320c0406066fb62d6c42d0a172244ab2a677d692915fcb727393fe1ab4c7d7b3"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/BeryJu/korb/releases/download/v1.0.4/korb_1.0.4_linux_arm.tar.gz"
-      sha256 "f8d31edfc6de879ce93c03998b749f388880846bad9509c991b9f012dd9062c6"
+      url "https://github.com/BeryJu/korb/releases/download/v1.1.0/korb_1.1.0_linux_arm.tar.gz"
+      sha256 "c354ce667b43a56a3be610e6a5da245760b810803a2f3a6bb36742a3e69b76a3"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/BeryJu/korb/releases/download/v1.0.4/korb_1.0.4_linux_arm64.tar.gz"
-      sha256 "15d60c6c434397f35aa19e1da2f3c5aa1326ebe5da17aac2ce8379be38ea5636"
+      url "https://github.com/BeryJu/korb/releases/download/v1.1.0/korb_1.1.0_linux_arm64.tar.gz"
+      sha256 "40eef95ada78a43578c42caa32c52a9dcde1c469edbfba56f483dabd384deb7b"
     end
   end
 
