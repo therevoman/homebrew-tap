@@ -5,36 +5,51 @@
 class AcmeForAppliances < Formula
   desc "ACME Support for appliances that don't natively support it"
   homepage "https://github.com/beryju/acme-for-appliances"
-  version "1.1.2"
-  bottle :unneeded
+  version "1.1.4"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v1.1.2/acme-for-appliances_1.1.2_darwin_arm64.tar.gz"
-      sha256 "0aaa573e9d81a3c87410e73e21e12970b5434e4155e93982a187d0986f35d025"
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v1.1.2/acme-for-appliances_1.1.2_darwin_amd64.tar.gz"
-      sha256 "f18e25e8a7d3dd64a86ce76d1963eca86877af086e3d416daf630f7365376b6a"
+      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v1.1.4/acme-for-appliances_darwin_amd64"
+      sha256 "1ad33e16542b4f30d8f2c82e9231d4ce45035babde5a1d0c841e73db5d15db2d"
+
+      def install
+        bin.install "acme-for-appliances_darwin_amd64" => "acme-for-appliances"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v1.1.4/acme-for-appliances_darwin_arm64"
+      sha256 "289f109f9fed525932a0907e880b551bf91b6b171362f287b1dcfae543af3229"
+
+      def install
+        bin.install "acme-for-appliances_darwin_arm64" => "acme-for-appliances"
+      end
     end
   end
 
   on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v1.1.4/acme-for-appliances_linux_amd64"
+      sha256 "1875abfbb886b93089bed9d51baaefe20e699efee445b5e9fd7225ca812ffe62"
+
+      def install
+        bin.install "acme-for-appliances_linux_amd64" => "acme-for-appliances"
+      end
+    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v1.1.2/acme-for-appliances_1.1.2_linux_arm.tar.gz"
-      sha256 "b2035e83edcc164b412f85c1a3fb2d2cefcc5f00abed6fa844a5f4b6e8c119b0"
+      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v1.1.4/acme-for-appliances_linux_arm"
+      sha256 "a912aae6fd8318d1e2701cf11a8f6afaaf8131305bd6d1391d9352a2a3615555"
+
+      def install
+        bin.install "acme-for-appliances_linux_arm" => "acme-for-appliances"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v1.1.2/acme-for-appliances_1.1.2_linux_arm64.tar.gz"
-      sha256 "912657e172efa48b0e69b16d6cc89fa4f5f07df6d3314021033474559a10c9d6"
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v1.1.2/acme-for-appliances_1.1.2_linux_amd64.tar.gz"
-      sha256 "037c4da5a2cb277f1b995b5d31d19249db7e9500bf790ea63c9edb0501d1311e"
-    end
-  end
+      url "https://github.com/BeryJu/acme-for-appliances/releases/download/v1.1.4/acme-for-appliances_linux_arm64"
+      sha256 "b00e89a51afacb2d2e2c17a3f0f781a2736d08b28b2c3d5c245e074b86c743f5"
 
-  def install
-    bin.install "acme-for-appliances"
+      def install
+        bin.install "acme-for-appliances_linux_arm64" => "acme-for-appliances"
+      end
+    end
   end
 end
