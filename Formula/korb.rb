@@ -6,7 +6,6 @@ class Korb < Formula
   desc "Move Kubernetes PVCs between Storage Classes and Namespaces"
   homepage "https://github.com/beryju/korb"
   version "1.1.0"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
