@@ -5,50 +5,50 @@
 class OidcTestClient < Formula
   desc "Small, OIDC Client, to debug and test OIDC providers"
   homepage "https://github.com/beryju/oidc-test-client"
-  version "1.3"
+  version "1.4"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/BeryJu/oidc-test-client/releases/download/v1.3/oidc-test-client_darwin_amd64"
-      sha256 "e6054f9739ad3d59add63e45d4b8e77343fae083e2acc9e02ea6301020d809a8"
-
-      def install
-        bin.install "oidc-test-client_darwin_amd64" => "oidc-test-client"
-      end
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/BeryJu/oidc-test-client/releases/download/v1.3/oidc-test-client_darwin_arm64"
-      sha256 "cf40a3fd2c30491fa5684231cf8bf32077e19b66a4dcd2cdc1a33d6bfa9ce463"
+      url "https://github.com/BeryJu/oidc-test-client/releases/download/v1.4/oidc-test-client_darwin_arm64"
+      sha256 "6e8cac392e23460b5132ca0ba2f7a8d883e35207247a48de7f49e3689cce26be"
 
       def install
         bin.install "oidc-test-client_darwin_arm64" => "oidc-test-client"
       end
     end
+    if Hardware::CPU.intel?
+      url "https://github.com/BeryJu/oidc-test-client/releases/download/v1.4/oidc-test-client_darwin_amd64"
+      sha256 "7baba4290617ce42d1b00d8a75424838786181a7db16ffe8557f7160721a19d1"
+
+      def install
+        bin.install "oidc-test-client_darwin_amd64" => "oidc-test-client"
+      end
+    end
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/BeryJu/oidc-test-client/releases/download/v1.4/oidc-test-client_linux_arm64"
+      sha256 "4573aae57925ffab36156ba60dd1a216275ff9e3d6b9bcc1c3849050230cf8f2"
+
+      def install
+        bin.install "oidc-test-client_linux_arm64" => "oidc-test-client"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/BeryJu/oidc-test-client/releases/download/v1.3/oidc-test-client_linux_amd64"
-      sha256 "ae0de4534bc856aeb80659872b6a080b0566044fa41e0b30449a903320bc70cc"
+      url "https://github.com/BeryJu/oidc-test-client/releases/download/v1.4/oidc-test-client_linux_amd64"
+      sha256 "599f18c9f0e7640e63260773892d1b7aec19d095fc17b2a17730a04bb359f510"
 
       def install
         bin.install "oidc-test-client_linux_amd64" => "oidc-test-client"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/BeryJu/oidc-test-client/releases/download/v1.3/oidc-test-client_linux_armv6"
-      sha256 "46c1388843276b52784971fe027b8e275692441ad5eb0113b700beee06163849"
+      url "https://github.com/BeryJu/oidc-test-client/releases/download/v1.4/oidc-test-client_linux_armv6"
+      sha256 "4a5054b4db2f4c6f40a73106f8641ca168c6aeb8ca1a28cd2cb995c290ad7882"
 
       def install
         bin.install "oidc-test-client_linux_armv6" => "oidc-test-client"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/BeryJu/oidc-test-client/releases/download/v1.3/oidc-test-client_linux_arm64"
-      sha256 "32854f50630ef63c63a67e306437f7c44bce2a316c92e9417e180b693419c19a"
-
-      def install
-        bin.install "oidc-test-client_linux_arm64" => "oidc-test-client"
       end
     end
   end
